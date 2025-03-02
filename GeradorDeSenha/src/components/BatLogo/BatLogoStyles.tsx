@@ -6,6 +6,5 @@ export const styles = StyleSheet.create({
     fontWeight:'bold',
     fontSize:30,
     color:'#E5BF3C'
-
 }
 });
