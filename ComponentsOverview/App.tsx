@@ -3,7 +3,7 @@ import { Alert,StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, styles.border]}>
 
       <View onTouchStart={(event)=>{
         Alert.alert('Começou a clicar, clique iniciado')}}
@@ -13,9 +13,20 @@ export default function App() {
           
         }}
           >
-             <Text>Olá</Text></View>
-      <Text>Open up App.tsx to start working on your app!</Text>
+             <Text style={[styles.texto, styles.border]}>Olá</Text></View>
+      <Text selectable={true} onPress={()=>{console.log("Pressionado")}} 
+                              onLongPress={()=>{console.log("Pressionando longamente")}}
+        >Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
+          <Text>
+            <Text>Texto</Text>
+            <Text>Concatenado</Text>
+          </Text>
+
+          <View>
+            <Text>Olá</Text>
+            <Text>Mundo</Text>
+          </View>
     </View>
   );
 }
@@ -27,4 +38,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  border:{
+    borderColor:"red",
+    borderWidth:5
+  },
+  texto:{
+    fontSize:20,
+    fontWeight:"bold",
+    backgroundColor:"blue",
+    color:"white",
+    padding:20
+  }
 });
