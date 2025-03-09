@@ -14,7 +14,6 @@ export function StackRoutes() {
         component={HomeScreen}
         options={{
           title: 'Main Menu',
-          headerTintColor: 'blue'
         }}
       />
 

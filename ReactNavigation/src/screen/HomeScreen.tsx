@@ -1,12 +1,20 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View,Text } from 'react-native';
+import { View,Text,Button } from 'react-native';
 
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}:any) {
+  function navToGallery(){
+    navigation.navigate('gallery')
+  }
+
   return (
-    <View style={{flex:1, backgroundColor:'red'}}>
+    <View style={{flex:1}}>
          <Text>Home Works</Text>
+         <Button
+          title="Go To Gallery"
+          onPress={navToGallery}
+         />
     </View>
   );
 }                   
